@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: SQS template
+
+Parameters:
+  QueueName:
+    Description: SQS name
+    Type: String
+  Environment:
+    Description: Processor Environment Type
+    Type: String
+    Default: Development
+    AllowedValues:
+      - Shared
+      - Development
+      - QA
+      - Integration
+      - Performance
+      - PreProduction
+      - Production
+      - PostProduction
+    ConstraintDescription: Must be a valid environment type.
+
+Resources:
+  Queue:
+    Type: AWS::SQS::Queue
+    Properties:
+      MessageRetentionPeriod: 1209600
+      QueueName: !Ref QueueName
+      VisibilityTimeout:
+        Ref: VisibilityTimeout
+
+Outputs:
+  QueueARN:
+    Description: Queue ARN
+    Value: !GetAtt Queue.Arn 

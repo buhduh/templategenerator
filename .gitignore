@@ -1,0 +1,7 @@
+gopath
+*.bak
+*.sw[a-z]
+bin/
+src/frontend/node_modules/
+build/
+reference_resources/

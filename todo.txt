@@ -1,0 +1,3 @@
+probably overthinking all this css/js stuff, do i really need to do all this copying? I do like dynamically generating in tht template though
+
+somehow have to get the file_browser to pass the contents of the file to a function of the editor
