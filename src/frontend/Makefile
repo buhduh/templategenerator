@@ -14,16 +14,12 @@ PKG_JSON := ${DIR}/package.json
 WEBPACK_JS := ${DIR}/webpack.config.js
 
 MAIN := ${BUILD}/main.bundle.js
-SRC := $(shell                           \
-	find ${DIR} -type f -name '*.js'     \
-	  -not -path '${BUILD}/*'            \
-	  -not -path '${DIR}/node_modules/*' \
-)
+SRC := $(wildcard js/*.js js/components/*.js styles/*.css)
 
 NODE_MODULES := node_modules
 
 .PHONY: all
-all: ${BUILD_DIRS} ${NODE_MODULES} ${VER_BUILD} ${MAIN}
+all: ${BUILD_DIRS} ${NODE_MODULES} ${MAIN}
 
 ${NODE_MODULES}:
 	@npm install

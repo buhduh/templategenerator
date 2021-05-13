@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import FileBrowser from "./file_browser.js";
-import Editor from "./main_editor.js";
-
 import {
   Nav,
   NavDropdown
@@ -13,9 +10,7 @@ class Header extends React.Component {
 
   constructor(props) {
     super(props)
-    this.fileSelect = this.fileSelect.bind(this);
-    this.browserRef = React.createRef();;
-  }
+  };
 
   //TODO, cannot, for the life of me, get the "active" class to go away.
   //There's some sort of bubbling/capturing going on that im just picking up on
@@ -26,17 +21,7 @@ class Header extends React.Component {
         console.log(eventKey);
         break;
       case "open_file":
-        const element = document.getElementById("floater");
-        const editorRef = React.createRef();
-        const editor = <Editor ref={editorRef} fileName="" contents="" />;
-        const fileBrowser = <
-          FileBrowser container={element}
-          renderElement={editor}
-          renderElementRef={editorRef}
-          browserRef={this.browserRef}
-        />;
-        ReactDOM.render(fileBrowser, element);
-        this.browserRef.current.click();
+        console.log(eventKey);
         break;
       case "save":
         console.log(eventKey);

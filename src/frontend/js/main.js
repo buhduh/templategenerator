@@ -21,14 +21,15 @@ var bootstrapCSS = require('bootstrap/dist/css/bootstrap.css')
 
 const App = () => {
   return (
-    <Container fluid>
-      <Row>
+    <Container fluid id="root_containter">
+      <Row id="header_row">
         <Header />
       </Row>
-      <Row id="viewport" >
-        <Editor>
-          <Tab><CodeArea /></Tab>  
-        </Editor>
+      <Row id="viewport_row">
+        viewport
+      </Row>
+      <Row id="footer_row">
+        footer
       </Row>
       <div id="floater" style={{display: "none"}}></div>
     </Container>

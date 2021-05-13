@@ -1,7 +1,7 @@
 {
   "name": "templategenerator",
   "repository": "github:buhduh/git@github.com:buhduh/templategenerator.git",
-  "version": "0.0.1-05082021231608-debug",
+  "version": "0.0.1-05082021235050-debug",
   "description": "This is the frontend logic for templategenerator",
   "main": "js/main.js",
   "scripts": {
